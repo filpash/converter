@@ -1,0 +1,13 @@
+{
+  "APP_NAME": "КОНВЕРТЕР ВАЛЮТ",
+  "Welcome to the home page,": "Добро пожаловать на главную страницу,",
+  "Home": "Главная",
+  "Logged in as": "Вы вошли как",
+  "Login": "Вход",
+  "Logout": "Выход",
+  "Password": "Пароль",
+  "Password is required": "Пароль обязательно для заполнения",
+  "Username": "Имя пользователя",
+  "Username is required": "Имя пользователя обязательно для заполнения",
+  "Username or password incorrect.": "Имя пользователя введено не корректно."
+}
