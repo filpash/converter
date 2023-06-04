@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Currency } from '@app/models/currency/currency';
 
@@ -7,7 +7,7 @@ import { Currency } from '@app/models/currency/currency';
   providedIn: 'root',
 })
 export class ExchangeRateService {
-  private url = 'api/currency/';
+  private url = 'https://belarusbank.by/api/kursExchange';
 
   constructor(private httpClient: HttpClient) {}
 

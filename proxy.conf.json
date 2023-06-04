@@ -1,0 +1,7 @@
+{
+  "/api/*": {
+    "target": "https://belarusbank.by",
+    "secure": false,
+    "logLevel": "debug"
+  }
+}

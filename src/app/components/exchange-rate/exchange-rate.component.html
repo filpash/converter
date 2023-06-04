@@ -2,8 +2,8 @@
   <mat-card-content>
     <mat-card-title translate>Exchange rates</mat-card-title>
     <table mat-table [dataSource]="currencyList" class="mat-elevation-z8">
-      <ng-container matColumnDef="bankName">
-        <th mat-header-cell *matHeaderCellDef [style.display]="'none'" translate>Bank</th>
+      <ng-container matColumnDef="filialsText">
+        <th mat-header-cell *matHeaderCellDef [style.display]="'none'" translate>Filial</th>
         <td mat-cell *matCellDef="let element">{{ element.bank_name }}</td>
       </ng-container>
 
@@ -38,7 +38,7 @@
       </ng-container>
 
       <ng-container matColumnDef="1">
-        <th mat-header-cell *matHeaderCellDef [attr.rowspan]="2" translate>Bank</th>
+        <th mat-header-cell *matHeaderCellDef [attr.rowspan]="2" translate>Filial</th>
       </ng-container>
       <ng-container matColumnDef="2">
         <th mat-header-cell *matHeaderCellDef [attr.colspan]="2" class="center">USD</th>

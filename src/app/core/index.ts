@@ -1,4 +1,5 @@
 export * from './shared.module';
+export * from './utils/commonUtils';
 export * from './interceptors/api-prefix.interceptor';
 export * from './interceptors/error-handler.interceptor';
 export * from './loader/loader.component';
