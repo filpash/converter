@@ -3,6 +3,12 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouteReuseStrategy, RouterModule } from '@angular/router';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { NgxsModule } from '@ngxs/store';
+import { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin';
+import { NgxsLoggerPluginModule } from '@ngxs/logger-plugin';
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { CurrencyDataService } from '@app/services/currency-data.service';
+import { CurrencyState } from '@app/store/states/currency.state';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { TranslateModule } from '@ngx-translate/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -15,10 +21,14 @@ import { HomeModule } from './pages/home/home.module';
 import { ShellModule } from './shell/shell.module';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
+import { ExchangeRateService } from '@app/core/http/exchange-rate.service';
 
 @NgModule({
   imports: [
     BrowserModule,
+    NgxsModule.forRoot([CurrencyState]),
+    NgxsReduxDevtoolsPluginModule.forRoot(),
+    NgxsLoggerPluginModule.forRoot(),
     ServiceWorkerModule.register('./ngsw-worker.js', { enabled: environment.production }),
     FormsModule,
     HttpClientModule,
@@ -31,6 +41,7 @@ import { AppRoutingModule } from './app-routing.module';
     HomeModule,
     AuthModule,
     AppRoutingModule, // must be imported as the last module as it contains the fallback route
+    HttpClientInMemoryWebApiModule.forRoot(CurrencyDataService),
   ],
   declarations: [AppComponent],
   providers: [

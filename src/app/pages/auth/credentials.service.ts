@@ -1,7 +1,9 @@
 import { Injectable } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { Credentials } from '@app/models/authentication/credentials';
 
 const credentialsKey = 'credentials';
+const credential = 'admin';
 
 /**
  * Provides storage for authentication credentials.ts.
@@ -11,9 +13,10 @@ const credentialsKey = 'credentials';
   providedIn: 'root',
 })
 export class CredentialsService {
+  public credential = credential;
   private _credentials: Credentials | null = null;
 
-  constructor() {
+  constructor(private _snackBar: MatSnackBar) {
     const savedCredentials = sessionStorage.getItem(credentialsKey) || localStorage.getItem(credentialsKey);
     if (savedCredentials) {
       this._credentials = JSON.parse(savedCredentials);
@@ -62,5 +65,17 @@ export class CredentialsService {
       sessionStorage.removeItem(credentialsKey);
       localStorage.removeItem(credentialsKey);
     }
+  }
+
+  /**
+   * Show notification message after trying Login
+   * @param notificationText Entered future message text
+   */
+  openNotifySnackBar(notificationText: string) {
+    const userName = this.credentials ? this.credentials.username : '';
+    this._snackBar.open(`${notificationText} ${userName.toUpperCase()}`, 'Close', {
+      duration: 3000,
+      verticalPosition: 'top',
+    });
   }
 }
