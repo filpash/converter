@@ -24,7 +24,7 @@ The main benefits of using Sass over plain CSS are _variables_, _nesting_ and _m
   .my-component {
     // Put here all component elements (flat)
     .my-element {
-      // Use a third-level only for modifiers and state variations
+      // Use a third-level only for modifiers and states variations
       &.active { ... }
     }
   }

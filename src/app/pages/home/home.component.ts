@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { CredentialsService } from '@app/pages/auth';
 
 @Component({
   selector: 'app-home',
@@ -8,13 +7,8 @@ import { CredentialsService } from '@app/pages/auth';
 })
 export class HomeComponent implements OnInit {
   isLoading = false;
-  loggedUserName!: string;
 
-  constructor(private credentialsService: CredentialsService) {}
+  constructor() {}
 
   ngOnInit() {}
-
-  get username(): string | null {
-    return this.credentialsService.username;
-  }
 }

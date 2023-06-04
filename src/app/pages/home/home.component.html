@@ -1,10 +1,11 @@
 <div class="container">
-  <mat-card>
-    <mat-card-content>
-      <mat-card-title>
-        <span translate>Welcome to the home page,</span> <b>{{ username }}</b
-        >!
-      </mat-card-title>
+  <mat-card fxFlex="100%" fxLayout="row" fxLayoutAlign="space-between">
+    <mat-card-content fxFlex="30%">
+      <app-exchange-rate></app-exchange-rate>
+    </mat-card-content>
+
+    <mat-card-content fxFlex="65%">
+      <app-currency-converter></app-currency-converter>
     </mat-card-content>
   </mat-card>
 </div>
