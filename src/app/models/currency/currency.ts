@@ -5,12 +5,12 @@ export interface Currency {
   EUR_out: string;
   RUB_in: string;
   RUB_out: string;
-  bank_name: string;
+  filials_text: string;
   filial_id: string;
 }
 
 export interface CurrencyElements {
-  bankName: string;
+  filials_text: string;
   usdIn: string;
   usdOut: string;
   eurIn: string;

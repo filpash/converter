@@ -124,6 +124,7 @@ Development, build and quality processes are based on [angular-cli](https://gith
 - [Angular Flex Layout](https://github.com/angular/flex-layout)
 - [Material Icons](https://material.io/icons/)
 - [RxJS](http://reactivex.io/rxjs)
+- [NgXS](https://www.ngxs.io/)
 - [ngx-translate](https://github.com/ngx-translate/core)
 
 #### Coding guides

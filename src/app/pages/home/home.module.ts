@@ -7,6 +7,7 @@ import { SharedModule } from '@app/core';
 import { MaterialModule } from '@app/material.module';
 import { HomeRoutingModule } from './home-routing.module';
 import { ExchangeRateModule } from '@app/components/exchange-rate/exchange-rate.module';
+import { CurrencyConverterModule } from '@app/components/currency-converter/currency-converter.module';
 import { HomeComponent } from './home.component';
 
 @NgModule({
@@ -18,6 +19,7 @@ import { HomeComponent } from './home.component';
     MaterialModule,
     HomeRoutingModule,
     ExchangeRateModule,
+    CurrencyConverterModule,
   ],
   declarations: [HomeComponent],
 })

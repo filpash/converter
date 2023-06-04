@@ -1,0 +1,54 @@
+<mat-card class="container">
+  <mat-card-content>
+    <mat-card-title translate>Currency converter</mat-card-title>
+
+    <div class="form-container">
+      <form [formGroup]="currencyForm" (ngSubmit)="convertedCurrency()">
+        <div *ngFor="let group of currencyArray.controls; let i = index" formArrayName="currencies">
+          <div [formGroupName]="i">
+            <mat-form-field class="form-control-amount">
+              <mat-label translate>Amount</mat-label>
+              <input matInput type="number" [placeholder]="'Enter amount' | translate" formControlName="amount" />
+            </mat-form-field>
+
+            <mat-form-field class="form-control-from">
+              <mat-label translate>From</mat-label>
+              <mat-select formControlName="from">
+                <mat-option *ngFor="let currency of currencyCodes" [value]="currency">
+                  {{ currency }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+
+            <mat-form-field class="form-control-to">
+              <mat-label translate>To</mat-label>
+              <mat-select formControlName="to">
+                <mat-option *ngFor="let currency of currencyCodes" [value]="currency">
+                  {{ currency }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+
+          <div *ngIf="i !== 0">
+            <button class="form-btn-add" mat-raised-button color="primary" (click)="removeCurrencyGroup(i)">
+              <span translate>Remove</span>
+            </button>
+          </div>
+        </div>
+
+        <button class="form-btn-add" mat-raised-button color="primary" (click)="addCurrencyGroup()">
+          <span translate>Add</span>
+        </button>
+
+        <div class="result-block">
+          <span class="result-block-text">{{ resultText }}</span>
+        </div>
+
+        <button class="form-btn-submit" mat-raised-button color="primary" type="submit" translate>
+          <span translate>Convert</span>
+        </button>
+      </form>
+    </div>
+  </mat-card-content>
+</mat-card>
